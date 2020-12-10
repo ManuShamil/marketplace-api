@@ -1,0 +1,61 @@
+### Adding item to market
+
+POST http://localhost:3000/market/listing/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "itemName": "AK74",
+    "accountID": "76561198213884255",
+    "listPrice": 200, 
+    "condition": 0
+}
+
+### Register new user
+
+POST http://localhost:3000/account/register HTTP/1.1
+Content-Type: application/json
+
+{
+    "accountID": "76561198213882024"
+}
+
+### Add new config item to Market Configs
+
+POST http://localhost:3000/config/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "itemName": "AK74",
+    "minPrice": 0,
+    "maxPrice": 200
+}
+
+### Retrieve listing configs
+
+GET http://localhost:3000/config/listings HTTP/1.1
+Content-Type: application/json
+
+{
+    "searchFilter": "UMP45",
+    "limit": 0,
+    "offset": 0
+}
+
+### Retrieve market listings
+
+GET http://localhost:3000/market/listings HTTP/1.1
+Content-Type: application/json
+
+{
+    "searchFilter": "ump",
+    "limit": 0,
+    "offset": 0
+}
+
+### Retrieve market extremes(low/high)
+GET http://localhost:3000/market/extremes HTTP/1.1
+Content-Type: application/json
+
+{
+
+}
