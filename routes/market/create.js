@@ -19,8 +19,8 @@ const {
 router.route('/')
     .post((req, res, next) => {
 
-        var { itemName, listPrice, accountID } = req.body;
-        addMarketItem(itemName, listPrice, accountID)
+        var { itemName, listPrice, accountID, condition } = req.body;
+        addMarketItem(itemName, listPrice, accountID, condition)
         .then((result) => {
 
             handleResponse(res, result) 

@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const { listingModel } = require('./market')
+
 const listingConfigSchema = 
     mongoose.Schema({
         itemName: {
@@ -17,8 +19,9 @@ const listingConfigSchema =
         }
     });
 
-listingConfigSchema.pre('remove', function(next) {
-    this.model('marketlistings').remove({ item: this._id }, next);
+listingConfigSchema.pre('findOneAndRemove', function(next) {
+    var { _id } = this.getQuery();
+    listingModel.deleteMany({ item: _id }, next);
 });
 
 const donatorConfigSchema = 

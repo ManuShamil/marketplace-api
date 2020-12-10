@@ -4,10 +4,10 @@ POST http://localhost:3000/market/listing/create HTTP/1.1
 Content-Type: application/json
 
 {
-    "itemName": "AK74",
-    "accountID": "76561198213884255",
-    "listPrice": 200, 
-    "condition": 0
+    "itemName": "AK",
+    "accountID": "76561198213882024",
+    "listPrice": 5000, 
+    "condition": 1
 }
 
 ### Register new user
@@ -19,15 +19,25 @@ Content-Type: application/json
     "accountID": "76561198213882024"
 }
 
+### Get account listings
+GET http://localhost:3000/account/listings HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id": "5fd2abfb8936ef32bcfff3ae",
+    "limit": 3,
+    "offset": 0
+}
+
 ### Add new config item to Market Configs
 
 POST http://localhost:3000/config/create HTTP/1.1
 Content-Type: application/json
 
 {
-    "itemName": "AK74",
+    "itemName": "AK",
     "minPrice": 0,
-    "maxPrice": 200
+    "maxPrice": 5000
 }
 
 ### Retrieve listing configs
@@ -59,3 +69,28 @@ Content-Type: application/json
 {
 
 }
+
+### Retrieve market index
+
+
+GET http://localhost:3000/market/indeces HTTP/1.1
+Content-Type: application/json
+
+
+### Buy Item
+POST http://localhost:3000/market/buy HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id": "5fd29124a7ec2d2e848b507c"
+}
+
+### Buy Item
+POST http://localhost:3000/market/buycheapest HTTP/1.1
+Content-Type: application/json
+
+{
+    "itemID": "5fd2abd38936ef32bcfff3ad"
+}
+
+
