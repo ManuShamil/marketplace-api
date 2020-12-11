@@ -12,6 +12,7 @@ const { addBalance } = require('./lib/accounts/addBalance')
 const { buyItem } = require('./lib/market/buyItem')
 const { getMylistings } = require('./lib/accounts/getMylistings')
 const { buyCheapestItem } = require('./lib/market/buyCheapestItem')
+const { claimBalance } = require('./lib/accounts/claimBalance')
 
 
 connectToDatabase()
@@ -50,6 +51,12 @@ connectToDatabase()
             // }).catch(result => {
             //     console.log(result)
             // })
+
+            await claimBalance("5fd2abfb8936ef32bcfff3ae").then( result => {
+                console.log(result)
+            }).catch(result => {
+                console.log(result)
+            })
 
             
             // await addBalance("5fcf7b02608f6426908131db", 500).then( result => {

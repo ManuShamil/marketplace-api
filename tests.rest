@@ -29,6 +29,15 @@ Content-Type: application/json
     "offset": 0
 }
 
+### Claim Balance
+POST http://localhost:3000/account/balance/claim HTTP/1.1
+Content-Type: application/json
+
+{
+    "accountID": "5fd2abfb8936ef32bcfff3ae"
+}
+
+
 ### Add new config item to Market Configs
 
 POST http://localhost:3000/config/create HTTP/1.1
@@ -90,7 +99,8 @@ POST http://localhost:3000/market/buycheapest HTTP/1.1
 Content-Type: application/json
 
 {
-    "itemID": "5fd2abd38936ef32bcfff3ad"
+    "itemID": "5fd2abd38936ef32bcfff3ad",
+    "condition": 1
 }
 
 
