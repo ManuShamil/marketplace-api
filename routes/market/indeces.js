@@ -16,9 +16,11 @@ const { handleResponse } = require('../../lib/other')
  * @param {Number} offset - offset from which listings must be retrieved
  */
 router.route('/')
-    .get((req, res, next) => {
+    .post((req, res, next) => {
 
-        getIndeces()
+        console.log(req.body)
+
+        getIndeces(req.body)
         .then((result) => handleResponse(res, result) )
         .catch(result =>  handleResponse(res, result) )
 

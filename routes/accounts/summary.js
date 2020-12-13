@@ -6,20 +6,21 @@ const express = require('express')
 const router = express.Router()
 
 const { 
-    getMylistings
-} = require('../../lib/accounts/getMylistings');
+    getAccountSummary
+} = require('../../lib/accounts/summary');
+
 const { handleResponse } = require('../../lib/other');
 
 /**
- * @name POST::\accounts\listings
- * @summary Gets listings linked to the account
+ * @name POST::\account\summary
+ * @summary Gets summary of account
  * @param {string} accountID - steam64ID
  */
 router.route('/')
     .post((req, res, next) => {
 
 
-        getMylistings(req.body)
+        getAccountSummary(req.body)
         .then((result) => {
 
             handleResponse(res, result) 

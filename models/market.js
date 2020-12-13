@@ -51,6 +51,10 @@ var marketIndexSchema =
         },
         condition: {
             type: Number
+        },
+        stock: {
+            type: Number,
+            min: 0
         }
     })
 

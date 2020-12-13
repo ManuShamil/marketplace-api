@@ -4,10 +4,20 @@ POST http://localhost:3000/market/listing/create HTTP/1.1
 Content-Type: application/json
 
 {
-    "itemName": "AK",
-    "accountID": "76561198213882024",
-    "listPrice": 5000, 
-    "condition": 1
+    "itemName": "M4A1",
+    "accountID": "76561198213884255",
+    "listPrice": 500, 
+    "condition": 0
+}
+
+### Edit listing
+
+POST http://localhost:3000/market/edit HTTP/1.1
+Content-Type: application/json
+
+{
+    "_id": "5fd33dca6e472e3140bdb28a",
+    "listPrice": 200
 }
 
 ### Register new user
@@ -16,18 +26,28 @@ POST http://localhost:3000/account/register HTTP/1.1
 Content-Type: application/json
 
 {
-    "accountID": "76561198213882024"
+    "accountID": "76561198213884255"
 }
 
 ### Get account listings
-GET http://localhost:3000/account/listings HTTP/1.1
+POST http://localhost:3000/account/listings HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id": "5fd2abfb8936ef32bcfff3ae",
+    "_id": "5fd63333b781020d9c5f941c",
     "limit": 50,
-    "offset": 900
+    "offset": 0,
+    "searchFilter": ""
 }
+
+### Get account summary
+POST http://localhost:3000/account/summary HTTP/1.1
+Content-Type: application/json
+
+{
+    "accountID": "76561198213882024"
+}
+
 
 ### Claim Balance
 POST http://localhost:3000/account/balance/claim HTTP/1.1
@@ -44,30 +64,29 @@ POST http://localhost:3000/config/create HTTP/1.1
 Content-Type: application/json
 
 {
-    "itemName": "AK",
+    "itemName": "AK101",
     "minPrice": 0,
     "maxPrice": 5000
 }
 
 ### Retrieve listing configs
 
-GET http://localhost:3000/config/listings HTTP/1.1
+POST http://localhost:3000/config/listings HTTP/1.1
 Content-Type: application/json
 
 {
-    "searchFilter": "UMP45",
-    "limit": 0,
+    "searchFilter": "",
+    "limit": 10,
     "offset": 0
 }
 
 ### Retrieve market listings
 
-GET http://localhost:3000/market/listings HTTP/1.1
+POST http://localhost:3000/market/listings HTTP/1.1
 Content-Type: application/json
 
 {
-    "searchFilter": "ump",
-    "limit": 0,
+    "limit": 5,
     "offset": 0
 }
 
@@ -82,8 +101,14 @@ Content-Type: application/json
 ### Retrieve market index
 
 
-GET http://localhost:3000/market/indeces HTTP/1.1
+POST http://localhost:3000/market/indeces HTTP/1.1
 Content-Type: application/json
+
+{
+    "searchFilter" : "m4",
+    "limit": 5,
+    "offset": 0
+}
 
 
 ### Buy Item
@@ -91,7 +116,7 @@ POST http://localhost:3000/market/buy HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id": "5fd29124a7ec2d2e848b507c"
+    "_id": "5fd2af2cfbc904158c23b2fb"
 }
 
 ### Buy Item

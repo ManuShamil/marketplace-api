@@ -9,14 +9,14 @@ const {  handleResponse } = require('../../lib')
 const {  getConfigListings } = require('../../lib/config')
 
 /**
- * @name get::\config\listings
+ * @name POST::\config\listings
  * @summary gets listing config for the market
  * @param {String} searchFilter - search filter
  * @param {Number} limit - resolution of retrieved listings
  * @param {Number} offset - offset from which listings must be retrieved
  */
 router.route('/')
-    .get((req, res, next) => {
+    .post((req, res, next) => {
 
         getConfigListings(req.body)
         .then((result) => {

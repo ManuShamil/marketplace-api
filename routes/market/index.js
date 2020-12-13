@@ -12,6 +12,7 @@ marketRouter.use("/config", require('./config'))
 marketRouter.use("/extremes", require('./extreme'))
 marketRouter.use("/indeces", require('./indeces'))
 marketRouter.use("/buy", require('./buy'))
+marketRouter.use("/edit", require('./edit'))
 marketRouter.use("/buycheapest", require('./buycheapest'))
 
 

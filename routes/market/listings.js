@@ -9,14 +9,17 @@ const { handleResponse } = require('../../lib')
 const { getMarketListings } = require('../../lib/market')
 
 /**
- * @name get::\market\listings
+ * @name POST::\market\listings
  * @summary gets items listed in market
  * @param {String} searchFilter - search filter
  * @param {Number} limit - resolution of retrieved listings
  * @param {Number} offset - offset from which listings must be retrieved
  */
 router.route('/')
-    .get((req, res, next) => {
+    .post((req, res, next) => {
+
+        console.log(req.body)
+        console.log(req.headers)
 
         getMarketListings(req.body)
         .then((result) => {

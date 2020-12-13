@@ -30,6 +30,10 @@ const donatorConfigSchema =
             type: String,
             unique: true,
             required: true
+        },
+        maxListingCount: {
+            type: Number,
+            default: 100
         }
     });
 
