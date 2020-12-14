@@ -7,7 +7,7 @@ Content-Type: application/json
     "itemName": "M4A1",
     "accountID": "76561198213884255",
     "listPrice": 500, 
-    "condition": 0
+    "condition": 2
 }
 
 ### Edit listing
@@ -17,7 +17,7 @@ Content-Type: application/json
 
 {
     "_id": "5fd33dca6e472e3140bdb28a",
-    "listPrice": 200
+    "listPrice": 500
 }
 
 ### Register new user
@@ -64,7 +64,7 @@ POST http://localhost:3000/config/create HTTP/1.1
 Content-Type: application/json
 
 {
-    "itemName": "AK101",
+    "itemName": "M4A1",
     "minPrice": 0,
     "maxPrice": 5000
 }
@@ -76,7 +76,7 @@ Content-Type: application/json
 
 {
     "searchFilter": "",
-    "limit": 10,
+    "limit": 0,
     "offset": 0
 }
 
