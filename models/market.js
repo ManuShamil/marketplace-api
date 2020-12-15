@@ -1,5 +1,7 @@
 const mongoose = require('mongoose')
 
+const { accountModel } = require('./account')
+
 const listingSchema = 
     new mongoose.Schema({
         listPrice: {
@@ -24,9 +26,20 @@ const listingSchema =
         },
     });
 
+listingSchema.pre('save', function(next) {
+    accountModel
+        .updateOne(
+            { _id: this.seller }, 
+            { 
+                $inc: { listingsCount: 1}
+            }, 
+        next);
+});
+
+
 var marketIndexSchema = 
     new mongoose.Schema({
-        itemID: {
+        item: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "listingconfigs",
             required: true
@@ -34,6 +47,16 @@ var marketIndexSchema =
         cheapestListing: {
             type: mongoose.Schema.Types.ObjectId,
             ref: "marketlistings"
+        },
+        condition: {
+            type: Number
+        },
+        listPrice: {
+            type: Number
+        },
+        stock: {
+            type: Number,
+            min: 0
         }
     })
 

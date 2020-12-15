@@ -11,10 +11,12 @@ const accountSchema = new mongoose.Schema({
         default: 0,
         min: 0
     },
-    Listings: {
-        type: [ mongoose.Schema.Types.ObjectId ],
-        required: true
+    listingsCount: {
+        type: Number,
+        default: 0,
+        min: 0
     }
+
 })
 
 const accountModel = new mongoose.model( 'accounts', accountSchema)
