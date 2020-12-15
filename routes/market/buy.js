@@ -21,9 +21,9 @@ router.route('/')
     .post((req, res, next) => {
 
 
-        var { _id, reclaim } = req.body
+        var { _id, listPrice, reclaim } = req.body
 
-        buyItem(_id, reclaim)
+        buyItem(_id, listPrice, reclaim)
         .then(result => { console.log(); handleResponse(res, result) })
         .catch(result =>  { console.log(); handleResponse(res, result) })
 

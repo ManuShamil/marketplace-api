@@ -34,8 +34,8 @@ POST http://localhost:3000/account/listings HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id": "5fd63333b781020d9c5f941c",
-    "limit": 50,
+    "accountID": "76561198213884255",
+    "limit": 5,
     "offset": 0,
     "searchFilter": ""
 }
@@ -45,7 +45,7 @@ POST http://localhost:3000/account/summary HTTP/1.1
 Content-Type: application/json
 
 {
-    "accountID": "76561198213882024"
+    "accountID": "76561198213884255"
 }
 
 
@@ -54,7 +54,7 @@ POST http://localhost:3000/account/balance/claim HTTP/1.1
 Content-Type: application/json
 
 {
-    "accountID": "5fd2abfb8936ef32bcfff3ae"
+    "accountID": "76561198213882024"
 }
 
 
@@ -105,7 +105,7 @@ POST http://localhost:3000/market/indeces HTTP/1.1
 Content-Type: application/json
 
 {
-    "searchFilter" : "m4",
+    "searchFilter" : "",
     "limit": 5,
     "offset": 0
 }
@@ -116,7 +116,9 @@ POST http://localhost:3000/market/buy HTTP/1.1
 Content-Type: application/json
 
 {
-    "_id": "5fd2af2cfbc904158c23b2fb"
+    "_id": "5fd3249734b438091805a591",
+    "reclaim": true,
+    "listPrice": 4935
 }
 
 ### Buy Item

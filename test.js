@@ -36,11 +36,11 @@ connectToDatabase()
             //     console.log(result)
             // })
 
-            await getMylistings({ _id: "5fd63333b781020d9c5f941c", limit: 10, offset: 0 }).then( result => {
-                console.log((result))
-            }).catch(result => {
-                console.log(result)
-            })
+            // await getMylistings({ _id: "5fd63333b781020d9c5f941c", limit: 10, offset: 0 }).then( result => {
+            //     console.log((result))
+            // }).catch(result => {
+            //     console.log(result)
+            // })
 
             // for(var i =0; i < 1000; i++)
             //     await addMarketItem("AK", getRandomInt(0, 5000), "76561198213882024", getRandomInt(0, 2))
@@ -56,11 +56,11 @@ connectToDatabase()
             //     console.log(result)
             // })
 
-            // await refreshIndex().then( result => {
-            //     console.log(result)
-            // }).catch(result => {
-            //     console.log(result)
-            // })
+            await refreshIndex().then( result => {
+                console.log(result)
+            }).catch(result => {
+                console.log(result)
+            })
 
             // await getIndeces({ limit: 2, offset: 0, searchFilter: ""}).then( result => {
             //     console.log(result)

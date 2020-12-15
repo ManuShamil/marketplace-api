@@ -31,7 +31,6 @@ listingSchema.pre('save', function(next) {
         .updateOne(
             { _id: this.seller }, 
             { 
-                $push: { Listings: this._id },
                 $inc: { listingsCount: 1}
             }, 
         next);
