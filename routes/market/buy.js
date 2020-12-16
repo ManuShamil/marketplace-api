@@ -24,8 +24,8 @@ router.route('/')
         var { _id, listPrice, reclaim } = req.body
 
         buyItem(_id, listPrice, reclaim)
-        .then(result => { console.log(); handleResponse(res, result) })
-        .catch(result =>  { console.log(); handleResponse(res, result) })
+        .then(result => { handleResponse(res, result) })
+        .catch(result =>  { handleResponse(res, result) })
 
 
 

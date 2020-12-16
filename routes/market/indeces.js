@@ -18,7 +18,6 @@ const { handleResponse } = require('../../lib/other')
 router.route('/')
     .post((req, res, next) => {
 
-        console.log(req.body)
 
         getIndeces(req.body)
         .then((result) => handleResponse(res, result) )

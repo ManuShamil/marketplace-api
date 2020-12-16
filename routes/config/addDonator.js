@@ -23,7 +23,6 @@ router.route('/donator/add')
             handleResponse(res, result) 
         })
         .catch(result => { 
-            console.log(result); 
             handleResponse(res, result)
         })
 
