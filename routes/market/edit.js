@@ -24,7 +24,7 @@ router.route('/')
 
             handleResponse(res, result) 
         })
-        .catch(result => { console.log(result); handleResponse(res, result) })
+        .catch(result => { handleResponse(res, result) })
 
     })
 

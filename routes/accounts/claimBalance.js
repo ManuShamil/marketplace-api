@@ -16,13 +16,12 @@ const { handleResponse } = require('../../lib/other')
 router.route('/claim')
     .post((req, res, next) => {
 
-        console.log(req.body)
         var { accountID } = req.body
         claimBalance(accountID)
         .then((result) => {
             handleResponse(res, result) 
         })
-        .catch(result => { console.log(result); handleResponse(res, result) })
+        .catch(result => { handleResponse(res, result) })
 
     })
 

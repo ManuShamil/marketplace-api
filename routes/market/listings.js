@@ -18,16 +18,12 @@ const { getMarketListings } = require('../../lib/market')
 router.route('/')
     .post((req, res, next) => {
 
-        console.log(req.body)
-        console.log(req.headers)
-
         getMarketListings(req.body)
         .then((result) => {
 
             handleResponse(res, result) 
         })
         .catch(result => { 
-            console.log(result); 
             handleResponse(res, result)
         })
 

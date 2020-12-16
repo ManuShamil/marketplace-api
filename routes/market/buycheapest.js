@@ -21,8 +21,8 @@ router.route('/')
         var { itemID, condition } = req.body;
 
         buyCheapestItem(itemID, condition)
-        .then(result => { console.log(); handleResponse(res, result) })
-        .catch(result =>  { console.log(); handleResponse(res, result) })
+        .then(result => { handleResponse(res, result) })
+        .catch(result =>  { handleResponse(res, result) })
 
 
 
