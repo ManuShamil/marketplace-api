@@ -19,6 +19,7 @@ const connectToDatabase = () => {
             }, 
             (err) => {      
                 if(err) {
+                    console.log(err)
                     reject({
                         message: `*** Could not connect to MongoDB server ***`
                     })
